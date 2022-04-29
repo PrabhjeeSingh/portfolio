@@ -1,0 +1,466 @@
+<!Doctype html>
+<head>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   --><link rel="stylesheet" href="style.css">
+    <meta http-equiv="refresh" content="" >
+    <title>
+    
+    </title>
+
+    <script>
+        // $(document).ready(function(){
+        //     $(this).scrollTop(0);
+        //     });
+        function menus(){
+            var x=document.getElementById("mylinks");
+
+            if(x.style.display==="block" && window.matchMedia("(max-width: 625px)").matches ){
+                x.style.display="none";
+
+            }
+            else{
+                x.style.display="block";
+
+            }
+            // x.classList.toggle("content");
+        }
+        window.onresize = changed;
+        function changed(){
+            if (window.matchMedia("(min-width:626px)").matches){
+                document.getElementById("mylinks").style.display="block";
+            }
+            if(window.matchMedia("(max-width:625px)").matches){
+                document.getElementById("mylinks").style=="none"
+            }
+        }
+        </script>
+</head>
+<body>
+     <!--Home Page-->
+    <div id ="home" id="small">
+        </div>
+      <nav >
+       
+        <div id="label">
+
+         <label id="h"><a href="#home">Mr. Singh</a></label>
+        </div>
+        <div class="topnav">
+            <!-- <span class="full" onclick="menus()"> -->
+                <a href="javascript:void(0);" onclick="menus()">
+            <div class="des">
+            <div class="menu"></div>
+            <div class="menu"></div>
+            <div class="menu"></div>
+            
+            </div>
+            </a>
+            
+            <div class="content" id="mylinks">
+                <ul class="tt"> 
+            <li class="tit"> <a href="#contact" onclick="menus()">Contact</a>    </li>
+            <li class="tit">    <a href="#clients" onclick="menus()">Clients</a>      </li>    
+            <li class="tit">     <a href="#workb" onclick="menus()">Work</a>  </li>
+            <li class="tit">     <a href="#services" onclick="menus()">Services</a></li>
+            <li class="tit">      <a href="#resume" onclick="menus()">Resume</a>  </li>
+            <li class="tit">      <a href="#about" onclick="menus()">About</a></li>
+            <li class="tit">       <a href="#home" onclick="menus()">Home </a>     </li>
+                </ul>
+            </div>            
+            
+        </div>
+
+       </nav>
+    </div>
+    
+    
+    
+     
+
+        <centre>
+            <div class="intro" id="small">
+            
+                <p id="introd" > Hi,  <br>  
+                 <br>       
+                 <span id="name">
+                    I AM 
+                    PRABHJEE  SINGH
+                 </span>
+                <br>
+                <br>
+                <span  style="text-align: center;"class="write1">
+                    WEB DEVELOPER    
+                </span>
+                <span  style="text-align: center;"class="write2">
+                    CS STUDENT      
+
+                </span>
+                </p>
+            </div>
+        </centre>
+    </div>
+
+   
+
+
+
+<!--About Page-->
+<div id="about"id="small">
+    <div id="imwo">
+        <div id ="perimg">
+            <img id="person"src="person.jpeg" height="460" width="345">
+        
+        
+        </div>
+
+
+
+
+
+        <div id ="info" id="small"><br>
+            <p id="mo">More Info About Me</p>
+            <br>
+            <hr id="more"size="2"><br>
+            <p id="was">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do 
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim 
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+            aliquip ex ea commodo Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut 
+            enim ad minim veniam, ullamco laboris nisi ut aliquip ex ea commodo
+            </p>
+            <br>
+        
+          <div id="useful">
+            <ul id="sameline">
+                <li id="nae">Prabhjee Singh   </li>
+                         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      </li> -->
+                <li id="dob"> </li>
+              <!-- <ul id="sameline2"> <br> -->
+                   <li id="loc">Toronto, Ontario </li>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li id="mail">prabhjeesingh1@gmail.com </li>
+                
+            
+            </ul>
+          </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="sky">
+
+
+</div>
+
+<div id="resume">
+
+    <fieldset>
+
+            <div class='heading' >My Resume  
+            <hr class="heading">
+            </div>
+      
+            <input type="radio" name="tabs" id="tab1" checked />
+            <label id="tab1" for="tab1">Experience</label>
+            
+            <input type="radio" name="tabs" id="tab2" />
+            <label id="tab2" for="tab2">Education</label>
+      
+            <div class="tab content1">
+
+                <ul class="eee">
+                    <br>
+                    <li><h6 class="title">LIBRARY FACILITIES ASSISTANT - YORK UNIVERSITY</h6>
+                        
+                        
+                        <span class="date">JAN 2022 - APR 2022</span>
+                        
+                        
+                        <p class="ff">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        
+                        </li>
+                    <li>
+                        <hr id="resum">
+                        <br>
+                        <h6 class="title">TECHNICAL SALES REPRESENTATIVE - STAPLES CANADA</h6>
+                            <span class="date">JAN 2022 - APR 2022<br></span>
+                        
+                        <p class="ff">    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>  </li>
+                    <li><hr id="resum">
+                        <br>
+                        <h6 class="title">COORDINATOR - PARIVARTAN "THE CHANGE" NGO</h6>
+                            <span class="date">SEP 2020 - NOV 2021</span>
+                     <p class="ff">
+                       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                       </p><br>
+                    </li>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                   
+                </ul>
+            </div>
+
+
+
+            <div class="tab content2">
+
+                <ul class="eeF">
+                    <br>
+                    <li><h6 class="title">YORK UNIVERSITY</h6>
+                        
+                        
+                        <span class="date">SEP 2020 - MAY 2025(Expected)</span>
+                        
+                        
+                        <p class="ff">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        
+                        </li>
+                    <li>
+                        <hr id="resum">
+                        <br>
+                        <h6 class="title">PROGRAMMING INSTITUTE</h6>
+                            <span class="date">2019 - 2020<br></span>
+                        
+                        <p class="ff">    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>  </li>
+                    <li><hr id="resum">
+                        <br>
+                        <h6 class="title">DELHI PUBLIC SCHOOL</h6>
+                            <span class="date">2005 - 2019</span>
+                        <p class="ff">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p><br>
+                    </li>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </ul>
+                </div>
+      
+        
+      
+            
+    </fieldset>
+
+
+       
+
+
+</div>
+
+
+<div id ="autmn">
+</div>
+
+
+<!--  Service Page -->
+<div id="services">
+         
+        <div class='heading' >
+            My Services 
+            <hr class="heading">
+            
+        </div>
+       
+            
+
+        <div class="row text-center">
+
+            
+      
+            <div class="col-md-4 ">
+              
+              <span id="space">Web Design</span> <br>
+              <p  class="justify">La croix vaporware viral vexillologist, flannel jianbing you probably haven't heard of them lomo selfies fixie banjo bespoke literally.</p>
+              <br>  <br> <br>
+              <hr class="border">
+            </div>
+
+
+
+           
+
+
+
+
+            <div class=" col-md-4 xtramargin ">
+                      <span id="space">Development</span> <br>
+              <p  class="justify">Literally tacos tumeric heirloom fingerstache banjo green juice fashion axe locavore, freegan woke kogi vice photo booth.</p>
+             <br> <br> <br>
+              <hr class="border">
+            </div>
+
+            
+             
+                       
+ 
+
+
+
+            <div class=" col-md-4 market">
+            
+              <span id="space">Research</span> <br>
+
+              <p  class="justify">Helvetica pop-up raw denim, lomo godard tbh synth jean shorts. Aesthetic tumblr coloring book taco tofu.</p>
+             <br><br> <br> 
+              <hr class="border">
+            </div>
+        
+              
+            
+            
+            
+            
+            <div class="col-md-4  market"  >
+                <span id="space" class="market">Marketing</span>
+                
+                <p class="justify"> <br>
+                Lorem ipsum dolor sit amet, conse ctetur adipi sicing elit, sed do eiusmod tempor incid idunt ut labore et.
+                </p>
+                <br>
+            
+            </div>
+        
+            
+
+
+            <div class="col-md-4 ">
+                    <span id="space" class="serviceheading">Automation</span>
+
+                    <p class="justify"> <br>
+                    Lorem ipsum dolor sit amet, conse ctetur adipi sicing elit, sed do eiusmod tempor incid idunt ut labore et.
+                        </p>
+                        <br>
+            </div>
+
+
+           
+
+
+
+            <div class="col-md-4 col-xs-12">
+                    <span id="space" class="serviceheading">Problem Solving</span>
+
+                    <p class="justify"> <br>
+                    Lorem ipsum dolor sit amet, conse ctetur adipi sicing elit, sed do eiusmod tempor incid idunt ut labore et.
+                    </p>
+             
+
+
+
+            </div>
+
+
+        </div>
+        
+</div>
+
+
+
+
+
+<div id="workb">
+    
+
+    
+</div>
+
+
+<div id="work">
+    <h2>Let's Work Together!</h2>
+    <h5>I am available for freelance projects.</h5>
+    <span class="button">
+        <a href="#contact">Hire Me!</a>
+        </span>
+    <span class="button">
+    <a href="MyResume.pdf" download="MyResume">Download CV</a>
+    </span>
+</div>
+
+
+
+
+
+<div id="clients">
+
+
+
+Works
+
+
+</div>
+
+
+
+
+<div id="contact">
+
+        
+       <!-- <form >
+           <div>
+       -->
+       <!-- <div id="invisible-l"></div> -->
+       <div id="detail">
+
+        <h4>Get In Touch</h4>
+        <hr class="touch">
+
+            <input type="text" placeholder="Name" class="cont" name="name">
+            <input type="email" placeholder="Email" class="cont" name="email"><br>
+            <input type="text"id="subject" placeholder="Subject" class="cont" width=50px  name="subject"><br>
+            <textarea placeholder="Message" class="cont" name="message" cols="60" rows="5"></textarea><br>
+            <br>
+           <input type="submit" class="send"value="Submit" >
+            
+        </div>
+
+        <div id="box">
+            <div id="item">
+                <span>Phone:
+                    <br><br>
+                   <span id="context"> +1 (647)-685-xxxx
+                </span></span>
+                 
+
+            </div>
+            <div id="item">
+                <span>Email:
+                    <br><br>
+                   <span id="context"> prabhjeesingh1 @gmail.com
+                               </span> </span>
+            </div>
+            <div id="item">
+                <span>Address:
+                    <br><br>
+                  <span id="context"> TORONTO, ONTARIO
+                </span></span>
+            </div>        
+
+
+
+        </div>
+    
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+</body>
+
+</html>
