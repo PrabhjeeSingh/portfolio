@@ -906,6 +906,10 @@ div.heading{
 .topnav #mylinks {
     display:none;
 }
+a {
+  
+    text-decoration: none;
+}
 .topnav a.des{
     background-color:rgba(0, 0, 0, 0);
     display: block;
