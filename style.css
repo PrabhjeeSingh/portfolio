@@ -266,7 +266,7 @@ label a{padding: 2px 0 0 8px ;
     
     padding-top: 30px;
     
-    display: block;
+    display: flex;
     flex: 0 0 150px;
     
     
@@ -276,7 +276,10 @@ label a{padding: 2px 0 0 8px ;
     margin-left:10vw;
 }
 
-
+#p2{
+    position:relative;
+    display: block;
+}
 #imwo #info{
     
     position:absolute;
@@ -654,6 +657,7 @@ p#comment{
     width:100%;
     position: relative;
     background-color: #ffffff;
+    color: #000000;
     filter: brightness(100%);
 }
 
