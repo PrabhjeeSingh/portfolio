@@ -80,8 +80,9 @@ hr.heading{
 ***********************************************************************************************************************/
 #home{
     
-    background-image: url("backhome2.jpg");
+    background-image: url("zooom.jpg");
     background-repeat: no-repeat;
+    filter: brightness(35%);
     background-size: cover;
     background-attachment: fixed;
     height: 54pc;
