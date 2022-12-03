@@ -10,6 +10,7 @@
         outline: solid #f00 1px !important; */
       
 }
+#popup * {color: initial;} 
 
 
 
@@ -634,7 +635,7 @@ p#comment{
     display: inline-block;
     text-decoration: none;
     box-shadow: none;
-    
+
     color: #343434;
 
 }
