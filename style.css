@@ -92,6 +92,7 @@ hr.heading{
     
 }
 
+
 nav {
     position: sticky;
     position: fixed;
@@ -591,7 +592,7 @@ hr.border{
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    z-index:-2;
+    z-index:0;
     background-size: cover;
    
 }
@@ -609,6 +610,7 @@ h5{
     font-family: sans-serif;
     font-weight: lighter;
     padding-bottom: 20px;
+    color:white;
 }
 p#comment{
     text-align: center;
@@ -685,6 +687,7 @@ h4{ font-size: 40px;
     padding: 50px 0px 30px;
     text-align: left;
     filter:brightness(100%);
+    color:white;
 }
 .cont {
     width: 30%;
@@ -792,6 +795,7 @@ hr{
 span {
     font-family: Arial, Helvetica, sans-serif;
     font-size: larger;
+    color:white;
 }
 span#context{
     font-size: medium;
