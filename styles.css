@@ -856,6 +856,9 @@ span#context{
         display: block;
         width: 70%;
     }
+    #tab1,#tab2{
+        text-decoration: none;
+    }
     #useful{
           font-size: 20px;
     }
@@ -997,7 +1000,7 @@ ul.tt{
             overflow: visible;
             /* margin-left:-10px; */
             top: 75%; 
-            transform: translate(-50%,-20%); 
+            transform: translate(-30%,10%); 
             font-size: 2.8vw; 
            
             text-align:justify;
@@ -1040,6 +1043,9 @@ ul.tt{
         #useful{
             overflow: visible;
             font-size: 12px;
+        }
+        #tab1, #tab2{
+            text-decoration: none;
         }
 
        div.col-md-4{
@@ -1118,20 +1124,6 @@ ul.tt{
         
 }
 
-
-
-
-@media only screen and (min-width:300px) and (max-width:500px){
-  html body{
-    overflow-x:hidden;
-    min-width: 100%;
-   background-size: contain;
-
-  }
-}
-
-    
-    
 
 
 
