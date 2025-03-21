@@ -6,7 +6,16 @@ const Layout = () => {
   return (
     <>
       <Navbar />
-      <Outlet />
+      {/* <Outlet /> */}
+      <div id="home" className=' h-screen border-2'> 
+        Mine 
+      </div>
+      <div id='about' className='h-screen'>
+        Good
+      </div>
+      <div id='resume' className='h-screen'>
+              Good
+      </div>
     </>
   )
 }
