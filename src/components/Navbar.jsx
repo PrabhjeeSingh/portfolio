@@ -11,7 +11,7 @@ export default function Navbar() {
       {
         ["Home", "About", "Resume", "Services", "Work", "Contact"].map((item) => (
           <li key={item}>
-            <Link className='block px-4 py-2 hover:bg-gray-700'>{item}</Link>
+            <Link onClick={toggleMenu} smooth={true} to={`${item.toLowerCase()}`} className='block px-4 py-2 hover:bg-gray-700'>{item}</Link>
           </li>
         ))
       }
@@ -19,7 +19,7 @@ export default function Navbar() {
   ), []);
   
   return <>
-    <nav className='bg-black px-6 py-2 w-full fixed '>
+    <nav className='z-50 bg-black px-6 py-2 w-full fixed '>
       <div className='flex justify-between md:px-8 lg:px-15 mx-auto max-w-7xl'>
         <Link to='#' className='text-primary text-2xl font-bold px-6'>Mr. Singh</Link>
         <ul className='hidden md:flex space-x-6 text-white text-1xl py-1'>

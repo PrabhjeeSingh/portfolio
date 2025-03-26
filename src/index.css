@@ -6,3 +6,65 @@
 .active{
     @apply underline underline-offset-4 decoration-primary;
 }
+
+@keyframes write1 {
+
+     0%,
+     50%,
+     100% {
+         width: 0ch;
+     }
+
+     10%,
+     40% {
+         width: 9ch;
+         /* Adjust based on text length */
+     }
+ }
+
+ @keyframes write2 {
+
+     0%,
+     50%,
+     100% {
+         width: 0ch;
+     }
+
+     60%,
+     90% {
+         width: 14ch;
+         /* Adjust based on text length */
+     }
+ }
+
+ @keyframes caret {
+    0%,
+        100% {
+            opacity: 0;
+        }
+     50% {
+         opacity: 1;
+     }
+ }
+
+@layer utilities{
+  .write1 {
+    @apply overflow-hidden whitespace-nowrap relative inline-flex text-2xl text-white;
+    animation: write1 16s steps(25, end) infinite;
+  }
+
+  .write2 {
+    @apply overflow-hidden whitespace-nowrap relative inline-flex text-2xl text-white;
+    animation: write2 16s steps(25, end) infinite;
+  }
+
+  .write2::after,
+  .write1::after{
+    content: "|";
+    right: 0;
+    @apply absolute;
+    animation: caret 2s steps(1, end) infinite;
+  }
+}
+
+
