@@ -1,0 +1,97 @@
+{
+        "education": [
+                {
+                        "id": 1,
+                        "date": "2016 - 2020",
+                        "title": "B.Sc Computer Science",
+                        "company": "York University",
+                        "details": [
+                                "Specialized in Software Engineering. Graduated with Honors. Coursework included Algorithms, Data Structures, and Machine Learning."
+                        ],
+                        "side": "left"
+                },
+                {
+                        "id": 2,
+                        "date": "2014 - 2016",
+                        "title": "Computer Science Diploma",
+                        "company": "Toronto College",
+                        "details": [
+                                "Fundamentals of programming, web development, and database systems. Dean's List all semesters."
+                        ],
+                        "side": "right"
+                }
+        ],
+        "experience": [
+                {
+                        "id": 1,
+                        "date": "SEP 2023 - PRESENT",
+                        "title": "TECHNICAL SOFTWARE ASSISTANT",
+                        "company": "York University Libraries",
+                        "details": [
+                                "Modernized legacy guest account software, enhancing usability by 35% and ensuring compatibility with outdated server constraints",
+                                "Developed Python scripts to automate inventory management, boosting operational efficiency by 80%",
+                                "Resolved server compatibility issues, reducing implementation time by 50%"
+                        ],
+                        "side": "left"
+                },
+                {
+                        "id": 2,
+                        "date": "Jan 2025 - APR 2025",
+                        "title": "DATA SCIENCE RESEARCH ASSISTANT",
+                        "company": "York University",
+                        "details": [
+                                "Designed and implemented an ETL pipeline to process Twitter data, including data cleaning and enrichment",
+                                "Automated 90% of the data extraction process, saving 15+ hours weekly",
+                                "Developed custom Python scripts for web scraping and API data retrieval"
+                        ],
+                        "side": "right"
+                },
+                {
+                        "id": 3,
+                        "date": "MAY 2024 - AUG 2024",
+                        "title": "SOFTWARE DEVELOPER INTERN",
+                        "company": "theScore",
+                        "details": [
+                                "Developed a mock payment provider using Elixir and Phoenix, streamlining load testing across multiple environments",
+                                "Created and integrated Datadog dashboards to monitor payment transaction performance, reducing transaction failures by 30%",
+                                "Enhanced REST API response configurations, improving test case diversity and performance by 20%"
+                        ],
+                        "side": "left"
+                },
+                {
+                        "id": 4,
+                        "date": "SEP 2022 - APR 2023",
+                        "title": "QUALITY ASSURANCE ANALYST",
+                        "company": "theScore",
+                        "details": [
+                                "Collaborated on a project developing a chat interface using OpenAI API to detect gambling issues through user behavior analysis",
+                                "Performed comprehensive QA testing across 10+ digital platforms, achieving 98% defect resolution",
+                                "Ensured full AODA compliance across all tested platforms"
+                        ],
+                        "side": "right"
+                },
+                {
+                        "id": 5,
+                        "date": "MAY 2022 - AUG 2022",
+                        "title": "INFORMATION TECHNOLOGY ASSISTANT",
+                        "company": "Lassonde School of Engineering",
+                        "details": [
+                                "Troubleshot and resolved hardware and software issues with a 99% success rate",
+                                "Automated software installation processes, saving hours of manual work",
+                                "Managed service requests and incidents through a ticketing system, ensuring timely resolution"
+                        ],
+                        "side": "left"
+                },
+                {
+                        "id": 6,
+                        "date": "JAN 2022 - AUG 2022",
+                        "title": "TECHNOLOGY SALES REPRESENTATIVE",
+                        "company": "Staples Canada",
+                        "details": [
+                                "Achieved $30,000 in sales over 2 months, providing expert advice on technical products",
+                                "Trained employees on IBM AS400 inventory management and customer relations"
+                        ],
+                        "side": "right"
+                }
+        ]
+}

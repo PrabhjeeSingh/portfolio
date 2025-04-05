@@ -17,7 +17,7 @@
 
      10%,
      40% {
-         width: 9ch;
+         width: 10ch;
          /* Adjust based on text length */
      }
  }
@@ -32,7 +32,7 @@
 
      60%,
      90% {
-         width: 14ch;
+         width: 16ch;
          /* Adjust based on text length */
      }
  }
@@ -66,5 +66,6 @@
     animation: caret 2s steps(1, end) infinite;
   }
 }
+
 
 

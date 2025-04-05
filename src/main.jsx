@@ -9,8 +9,8 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
     </Route>
-    
-)
+
+  )
 )
 
 createRoot(document.getElementById('root')).render(
