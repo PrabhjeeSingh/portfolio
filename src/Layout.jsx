@@ -39,13 +39,6 @@ const Layout = () => {
       <Services />
       {/* <AIFeatureSection /> */}
       <ContactPage />
-      <div className='h-screen'>
-        Good
-      </div>
-    
-      <div id='' className='h-screen'>
-        Good
-      </div>
      
       
     </>
