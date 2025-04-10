@@ -7,10 +7,15 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
   ],
-  base: '/myportfolio/', // Replace with your repository name
+  base: '/myportfolio/', // Match this with your repository name
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
+    sourcemap: true, // Add source maps for better debugging
+  },
+  server: {
+    port: 3000,
+    open: true,
   }
 })
