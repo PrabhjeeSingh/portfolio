@@ -1,0 +1,33 @@
+diff --git a/src/Layout.jsx b/src/Layout.jsx
+index c67b55f..47f1212 100644
+--- a/src/Layout.jsx
++++ b/src/Layout.jsx
+@@ -5,6 +5,7 @@ import Home from './Pages/Home'
+ import About from './Pages/About'
+ import Resume from './Pages/Resume'
+ import Services from './Pages/Services'
++import Contact from './Pages/Contact'
+ 
+ const Layout = () => {
+   return (
+@@ -24,6 +25,7 @@ const Layout = () => {
+       <div id='' className='h-screen'>
+         Good
+       </div>
++      <Contact/>
+     </>
+   )
+ }
+diff --git a/src/resource/data.json b/src/resource/data.json
+index 0ae3d63..e190a0a 100644
+--- a/src/resource/data.json
++++ b/src/resource/data.json
+@@ -2,7 +2,7 @@
+         "education": [
+                 {
+                         "id": 1,
+-                        "date": "2016 - 2020",
++                        "date": "2020 - 2024",
+                         "title": "B.Sc Computer Science",
+                         "company": "York University",
+                         "details": [

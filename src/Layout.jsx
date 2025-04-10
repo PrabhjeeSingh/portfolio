@@ -5,6 +5,16 @@ import Home from './Pages/Home'
 import About from './Pages/About'
 import Resume from './Pages/Resume'
 import Services from './Pages/Services'
+import Contact from './Pages/Contact'
+import HeroSection from './components/HeroSection'
+import AIFeatureSection from './components/AiFeatureSection'
+import ProjectsSection from './components/ProjectsSection'
+import TechStackSection from './components/TechStackStation'
+import Aboutv from './Pages/Aboutv'
+import AnimatedHero from '../Trash/AnimatedHero'
+import ExperiencePage from './Pages/ExperiencePage'
+import AwardsSection from './components/AwardsSection'
+import ContactPage from './Pages/ContactPage'
 
 const Layout = () => {
   return (
@@ -12,18 +22,32 @@ const Layout = () => {
       <Navbar />
       {/* <Outlet /> */}
 
-      <Home />
-      <About />
-
-
-      <Resume />
+      <Home id="home"/>
+      {/* <About />
+      <Resume />  
+      <Contact /> */}
+    
+      {/* <AnimatedHero /> */}
+     
+      <Aboutv />
+      <AwardsSection />
+      <ExperiencePage />
+      <TechStackSection />
+    
+      
+      <ProjectsSection />
       <Services />
+      {/* <AIFeatureSection /> */}
+      <ContactPage />
       <div className='h-screen'>
         Good
       </div>
+    
       <div id='' className='h-screen'>
         Good
       </div>
+     
+      
     </>
   )
 }

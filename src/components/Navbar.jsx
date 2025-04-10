@@ -9,7 +9,7 @@ export default function Navbar() {
   const mobileMenu = useMemo(() => (
     <ul className='md:hidden flex flex-col items-center space-y-2 bg-gray-950 py-2 text-white'>
       {
-        ["Home", "About", "Resume", "Services", "Work", "Contact"].map((item) => (
+        ["Home", "About", "Experience", "Projects", "Services", "Contact"].map((item) => (
           <li key={item}>
             <Link onClick={toggleMenu} smooth={true} to={`${item.toLowerCase()}`} className='block hover:bg-gray-700 px-4 py-2'>{item}</Link>
           </li>
@@ -19,11 +19,11 @@ export default function Navbar() {
   ), []);
 
   return <>
-    <nav className='z-50 fixed bg-black px-6 py-2 w-full'>
-      <div className='flex justify-between mx-auto md:px-8 lg:px-15 max-w-7xl'>
-        <Link to='#' className='px-6 font-bold text-primary text-2xl'>Mr. Singh</Link>
-        <ul className='hidden md:flex space-x-6 py-1 text-1xl text-white'>
-          {["Home", "About", "Resume", "Services", "Work", "Contact"].map((item) => (
+    <nav className='z-50 fixed bg-black/80 py-2 w-full'>
+      <div className='flex font-serif justify-between mx-auto md:px-1 max-w-7xl'>
+        <Link to='#' className='px-1 font-bold text-primary text-3xl'>Mr. Singh</Link>
+        <ul className='hidden md:flex font-serif space-x-6 py-1 text-2xl text-white'>
+          {["Home", "About", "Experience", "Projects", "Services", "Contact"].map((item) => (
             <li key={item}>
               <Link smooth={true} spy={true} to={`${item.toLowerCase()}`} activeClass='active' className='decoration-primary hover:underline underline-offset-4'>
                 {item}

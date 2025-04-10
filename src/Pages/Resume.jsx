@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import data from '../resource/data.json'
 import Card from '../components/Card';
+import Cardv from '../components/Cardv';
 
 const Resume = () => {
     const [activeTab, setActiveTab] = useState('experience');
@@ -65,7 +66,7 @@ const Resume = () => {
                             <div className={`hidden top-3.5 w-15 [@media(min-width:944px)]:block absolute h-1 z-3 bg-primary ${item.side === 'right' ? 'left-0' : 'right-0'}`}>
                             </div>
                             <div className='relative'>
-                                <Card item={item} />
+                                <Cardv item={item} />
                             </div>
                         </div>
 

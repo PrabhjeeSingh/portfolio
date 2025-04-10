@@ -17,7 +17,7 @@
 
      10%,
      40% {
-         width: 10ch;
+         width: 9.5ch;
          /* Adjust based on text length */
      }
  }
@@ -32,7 +32,7 @@
 
      60%,
      90% {
-         width: 16ch;
+         width: 15ch;
          /* Adjust based on text length */
      }
  }
@@ -42,7 +42,7 @@
         100% {
             opacity: 0;
         }
-     50% {
+    5%, 50% {
          opacity: 1;
      }
  }
@@ -62,7 +62,7 @@
   .write1::after{
     content: "|";
     right: 0;
-    @apply absolute;
+    @apply absolute text-amber-400;
     animation: caret 2s steps(1, end) infinite;
   }
 }
