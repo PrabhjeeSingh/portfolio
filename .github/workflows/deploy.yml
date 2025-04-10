@@ -25,6 +25,8 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          VITE_BASE_URL: '/myportfolio/' # Replace with your repository name
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
@@ -50,3 +52,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: gh-pages
+          commit_message: "Deploy: ${{ github.event.head_commit.message }}"
