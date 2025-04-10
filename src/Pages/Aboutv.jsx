@@ -1,6 +1,7 @@
-
+import React from 'react'
 import { motion } from "framer-motion"
 import { Code, Server, Cloud, Award, Briefcase, Brain, Github, Linkedin } from "lucide-react"
+import personImage from '../assets/person.jpg'
 
 const Aboutv = () => {
     const info =
@@ -48,36 +49,17 @@ const Aboutv = () => {
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="w-full md:w-1/3 flex justify-center"
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="relative"
                     >
-                        <div className="relative">
-                            <div className="absolute inset-0 rounded-2xl bg-amber-400 blur-md opacity-20 transform rotate-6"></div>
+                        <div className="relative overflow-hidden rounded-xl">
                             <img
-                                src="src/assets/person.jpg"
-                                alt="Photo of Prabhjee Singh"
-                                className="relative z-10 rounded-2xl w-64 md:w-80 object-cover border-2 border-amber-400/20 shadow-xl"
+                                src={personImage}
+                                alt="Prabhjee Singh"
+                                className="h-full w-full object-cover"
                             />
-
-                            {/* Social links */}
-                            <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-3">
-                                <a
-                                    href="https://github.com/yourusername"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-white border border-amber-400/30 shadow-lg transition-all hover:bg-amber-400 hover:text-black"
-                                >
-                                    <Github size={18} />
-                                </a>
-                                <a
-                                    href="https://linkedin.com/in/yourusername"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-white border border-amber-400/30 shadow-lg transition-all hover:bg-amber-400 hover:text-black"
-                                >
-                                    <Linkedin size={18} />
-                                </a>
-                            </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                         </div>
                     </motion.div>
 
@@ -85,7 +67,8 @@ const Aboutv = () => {
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
                         className="w-full md:w-2/3 md:text-left text-center"
                     >
                         {/* Heading */}

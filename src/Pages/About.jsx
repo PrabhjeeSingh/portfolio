@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import personImage from '../assets/person.jpg'
 
 const About = () => {
 
@@ -12,49 +14,53 @@ const About = () => {
     ]
 
     return (
-        <>
-            <div id="about" className="flex justify-center items-center bg-gray-50 py-20 border-2 min-h-screen">
-                <div className="mx-auto px-4 container">
-
-                    {/* Content will go here */}
-                    <div className="flex md:flex-row flex-col items-center border-cyan-100">
-                        {/* Image Section */}
-                        <div className="flex justify-center mb-10 md:mb-0 w-full md:w-2/3">
+        <section id="about" className="bg-black py-20">
+            <div className="container mx-auto px-4">
+                <div className="grid gap-12 lg:grid-cols-2">
+                    {/* Image Section */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="relative"
+                    >
+                        <div className="relative overflow-hidden rounded-xl">
                             <img
-                                src="src/assets/person.jpg"
-                                alt="Photo of Prabhjee Singh"
-                                className="inset-shadow-sm shadow-2xl rounded-2xl w-60 md:w-72 object-cover"
+                                src={personImage}
+                                alt="Prabhjee Singh"
+                                className="h-full w-full object-cover"
                             />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                         </div>
+                    </motion.div>
 
-                        {/* Content Section  */}
-                        <div className='md:pl-1 w-full md:w-2/3 md:text-left text-center'>
-                            {/* Heading */}
-                            <h2 className='font-bold text-3xl md:text-4xl'>About Me!</h2>
-                            {/* Underline */}
-                            <hr className='bg-primary mx-auto md:mx-0 my-2 mb-6 border-primary w-15 md:w-20 h-1'></hr>
-                            {/* Paragraph */}
-                            <p className="mx-auto mb-8 max-w-2xl text-gray-700 text-lg leading-relaxed">
-                                {info}
-                            </p>
-
-                            {/* Stats Info */}
-                            <div className='gap-4 grid grid-cols-2 sm:mx-auto lg:mx-0 max-w-md md:text-left sm:text-center'>
-                                {stats.map((info, index) => (
-                                    <div key={index} className='bg-white shadow-sm p-3 rounded-lg text-yellow-600'>
-                                        <div className='font-bold text-2xl'>{info.num}</div>
-                                        <div className='text-gray-600'>{info.of}</div>
-                                    </div>
-                                ))}
-
-                            </div>
+                    {/* Content Section */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="flex flex-col justify-center"
+                    >
+                        <h2 className="mb-6 text-4xl font-bold text-white">
+                            About <span className="text-amber-400">Me</span>
+                        </h2>
+                        <p className="mb-6 text-gray-300">
+                            {info}
+                        </p>
+                        <div className="grid grid-cols-2 gap-4">
+                            {stats.map((info, index) => (
+                                <div key={index} className="text-gray-300">
+                                    <h3 className="mb-2 font-semibold text-white">{info.of}:</h3>
+                                    <p>{info.num}</p>
+                                </div>
+                            ))}
                         </div>
-                    </div>
-
+                    </motion.div>
                 </div>
             </div>
-
-        </>
+        </section>
     )
 }
 
