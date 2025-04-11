@@ -28,8 +28,8 @@ const Layout = () => {
       <Contact /> */}
     
       {/* <AnimatedHero /> */}
-     
-      <Aboutv />
+      <About />
+      {/* <Aboutv /> */}
       <AwardsSection />
       <ExperiencePage />
       <TechStackSection />
