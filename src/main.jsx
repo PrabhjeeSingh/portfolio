@@ -13,7 +13,7 @@ const router = createBrowserRouter(
     </Route>
   ),
   {
-    basename: '/myportfolio/' // Match this with your repository name
+    basename: '/portfolio/' // Match this with your repository name
   }
 )
 

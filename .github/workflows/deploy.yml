@@ -26,7 +26,7 @@ jobs:
       - name: Build project
         run: npm run build
         env:
-          VITE_BASE_URL: '/myportfolio/' # Replace with your repository name
+          VITE_BASE_URL: '/portfolio/' # Replace with your repository name
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
