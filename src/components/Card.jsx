@@ -1,9 +1,13 @@
-import  React from "react"
+import React, { useState } from "react"
 import { motion } from "framer-motion"
 import { Briefcase, Calendar, Building } from "lucide-react"
+import { Link } from "react-router-dom"
 
 
-const Card = ({ item }) => {
+const Card = ({ item, info }) => {
+    console.log(item + "item : " + info)
+    const [show, setShow] = useState(false)
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -55,20 +59,47 @@ const Card = ({ item }) => {
                         <h4 className="font-medium text-amber-400">{item.company}</h4>
                     </div>
 
-                    <ul className="space-y-3">
-                        {item.details.map((detail, i) => (
-                            <motion.li
-                                key={i}
-                                initial={{ opacity: 0, x: -10 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.3, delay: 0.1 * i }}
-                                viewport={{ once: true }}
-                                className="text-gray-300 pl-4 border-l-2 border-amber-400/30"
+                    {info ? (
+                        <>
+                            <button
+                                onClick={() => setShow(prevState => !prevState)}
+                                className="w-full py-2 px-4 text-gray-300 hover:text-amber-300 transition-colors"
                             >
-                                {detail}
-                            </motion.li>
-                        ))}
-                    </ul>
+                                {show ? "Click to hide details" : "Click to show details"}
+                            </button>
+                            {show && (
+                                <ul className="space-y-3 mt-4">
+                                    {item.details.map((detail, i) => (
+                                        <motion.li
+                                            key={i}
+                                            initial={{ opacity: 0, x: -10 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            transition={{ duration: 0.3, delay: 0.1 * i }}
+                                            viewport={{ once: true }}
+                                            className="text-gray-300 pl-4 border-l-2 border-amber-400/30"
+                                        >
+                                            {detail}
+                                        </motion.li>
+                                    ))}
+                                </ul>
+                            )}
+                        </>
+                    ) : (
+                        <ul className="space-y-3">
+                            {item.details.map((detail, i) => (
+                                <motion.li
+                                    key={i}
+                                    initial={{ opacity: 0, x: -10 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.3, delay: 0.1 * i }}
+                                    viewport={{ once: true }}
+                                    className="text-gray-300 pl-4 border-l-2 border-amber-400/30"
+                                >
+                                    {detail}
+                                </motion.li>
+                            ))}
+                        </ul>
+                    )}
                 </div>
             </motion.div>
         </motion.div>

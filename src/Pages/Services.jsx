@@ -6,13 +6,13 @@ const services = [
         icon: <Code className="h-10 w-10" />,
         title: "Web Development",
         description:
-            "Building responsive, modern web applications using React, Next.js, and other cutting-edge technologies.",
+            "Building responsive, modern web applications using React, Tailwind CSS, Pheonix and other cutting-edge technologies.",
     },
     {
         icon: <Brain className="h-10 w-10" />,
         title: "Machine Learning",
         description:
-            "Developing intelligent solutions using TensorFlow, PyTorch, and other ML frameworks to solve complex problems.",
+            "Developing intelligent solutions using TensorFlow, Scikit-learn, and other ML frameworks to solve complex problems.",
     },
     {
         icon: <Database className="h-10 w-10" />,
@@ -27,7 +27,7 @@ const services = [
     {
         icon: <Server className="h-10 w-10" />,
         title: "Backend Development",
-        description: "Building secure, efficient APIs and server-side applications using Node.js, Express, and Python.",
+        description: "Building secure, efficient APIs and server-side applications using Elixir, SpringBoot, and Python.",
     },
     {
         icon: <LineChart className="h-10 w-10" />,

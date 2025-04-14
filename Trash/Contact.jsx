@@ -3,6 +3,7 @@ import React from 'react'
 const Contact = () => {
   return (
       <div
+            
           className="min-h-screen bg-cover bg-center flex items-center justify-center px-4"
           style={{
               backgroundImage: "url('/contact.jpeg')", // Replace with your image path

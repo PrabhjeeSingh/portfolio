@@ -17,7 +17,7 @@
 
      10%,
      40% {
-         width: 9.5ch;
+         width: 9.9ch;
          /* Adjust based on text length */
      }
  }
@@ -32,7 +32,7 @@
 
      60%,
      90% {
-         width: 15ch;
+         width: 15.3ch;
          /* Adjust based on text length */
      }
  }

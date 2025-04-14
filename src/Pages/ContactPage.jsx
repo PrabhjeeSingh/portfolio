@@ -1,12 +1,15 @@
 "use client"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { motion } from "framer-motion"
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react"
+import emailjs from '@emailjs/browser'
 
 const ContactPage = () => {
+    const form = useRef()
+
     const [formData, setFormData] = useState({
-        name: "",
-        email: "",
+        user_name: "",
+        user_email: "",
         subject: "",
         message: "",
     })
@@ -26,19 +29,30 @@ const ContactPage = () => {
         e.preventDefault()
         setFormStatus({ isSubmitting: true, isSubmitted: false, isError: false })
 
-        // Simulate form submission
-        try {
-            // Replace with actual form submission logic
-            await new Promise((resolve) => setTimeout(resolve, 1500))
-            setFormStatus({ isSubmitting: false, isSubmitted: true, isError: false })
-            setFormData({ name: "", email: "", subject: "", message: "" })
-        } catch (error) {
-            setFormStatus({ isSubmitting: false, isSubmitted: false, isError: true })
-        }
+        emailjs
+            .sendForm(
+                'service_f63gxn2',
+                'template_kujjd7a',
+                form.current,
+                {
+                    publicKey: '9hkiV5l87GeZiyj0L',
+                }
+            )
+            .then(
+                (result) => {
+                    console.log('SUCCESS!', result.text);
+                    setFormStatus({ isSubmitting: false, isSubmitted: true, isError: false });
+                    setFormData({ user_name: "", user_email: "", subject: "", message: "" });
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                    setFormStatus({ isSubmitting: false, isSubmitted: false, isError: true });
+                }
+            );
     }
 
     return (
-        <div className="min-h-screen bg-black py-20">
+        <div id="contact" className="min-h-screen bg-black py-20">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -71,10 +85,10 @@ const ContactPage = () => {
                                 <div>
                                     <h3 className="mb-1 font-medium text-white">Email</h3>
                                     <a
-                                        href="mailto:prabhjee.singh@example.com"
+                                        href="mailto:prabhjee.singh1@gmail.com"
                                         className="text-gray-300 transition-colors hover:text-amber-400"
                                     >
-                                        prabhjee.singh@example.com
+                                        prabhjee.singh1@gmail.com
                                     </a>
                                 </div>
                             </div>
@@ -85,8 +99,8 @@ const ContactPage = () => {
                                 </div>
                                 <div>
                                     <h3 className="mb-1 font-medium text-white">Phone</h3>
-                                    <a href="tel:+14165551234" className="text-gray-300 transition-colors hover:text-amber-400">
-                                        +1 (416) 555-1234
+                                    <a href="tel:+1647685xxxx" className="text-gray-300 transition-colors hover:text-amber-400">
+                                        +1 (647) xxx-xxxx
                                     </a>
                                 </div>
                             </div>
@@ -107,7 +121,7 @@ const ContactPage = () => {
                             <h2 className="mb-4 text-2xl font-bold text-white">Connect With Me</h2>
                             <div className="flex space-x-4">
                                 <a
-                                    href="https://github.com/yourusername"
+                                    href="https://github.com/PrabhjeeSingh"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-white transition-all hover:bg-amber-400 hover:text-black"
@@ -115,27 +129,15 @@ const ContactPage = () => {
                                     <Github className="h-5 w-5" />
                                 </a>
                                 <a
-                                    href="https://linkedin.com/in/yourusername"
+                                    href="https://linkedin.com/in/PrabhjeeSingh"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-white transition-all hover:bg-amber-400 hover:text-black"
                                 >
                                     <Linkedin className="h-5 w-5" />
                                 </a>
-                                <a
-                                    href="https://twitter.com/yourusername"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-white transition-all hover:bg-amber-400 hover:text-black"
-                                >
-                                    <Twitter className="h-5 w-5" />
-                                </a>
-                            </div>
-                        </div>
 
-                        {/* Map or Image */}
-                        <div className="mt-12 overflow-hidden rounded-xl">
-                            <img src="/images/toronto-map.jpg" alt="Toronto Map" className="h-64 w-full object-cover" />
+                            </div>
                         </div>
                     </motion.div>
 
@@ -169,7 +171,7 @@ const ContactPage = () => {
                                     </button>
                                 </motion.div>
                             ) : (
-                                <form onSubmit={handleSubmit}>
+                                <form ref={form} onSubmit={handleSubmit}>
                                     <div className="mb-4 grid gap-6 md:grid-cols-2">
                                         <div>
                                             <label htmlFor="name" className="mb-2 block text-sm font-medium text-gray-300">
@@ -178,7 +180,7 @@ const ContactPage = () => {
                                             <input
                                                 type="text"
                                                 id="name"
-                                                name="name"
+                                                name="user_name"
                                                 value={formData.name}
                                                 onChange={handleChange}
                                                 required
@@ -193,7 +195,7 @@ const ContactPage = () => {
                                             <input
                                                 type="email"
                                                 id="email"
-                                                name="email"
+                                                name="user_email"
                                                 value={formData.email}
                                                 onChange={handleChange}
                                                 required

@@ -1,89 +1,32 @@
-
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Github, ExternalLink, Star, GitFork } from "lucide-react"
+import { Github, ExternalLink, Heart, GitFork } from "lucide-react"
+import dataProjects from "../resource/dataProjects"
 
-// Sample projects - replace with your actual GitHub projects
-const projects = [
-    {
-        id: 1,
-        title: "AI Image Generator",
-        description: "A web application that uses OpenAI's DALL-E to generate images from text prompts.",
-        image: "/images/project-1.jpg",
-        tags: ["React", "Node.js", "OpenAI API", "TailwindCSS"],
-        github: "https://github.com/yourusername/ai-image-generator",
-        demo: "https://ai-image-generator.vercel.app",
-        stars: 45,
-        forks: 12,
-    },
-    {
-        id: 2,
-        title: "Sentiment Analysis Dashboard",
-        description: "Real-time sentiment analysis of Twitter data using machine learning algorithms.",
-        image: "/images/project-2.jpg",
-        tags: ["Python", "TensorFlow", "React", "D3.js"],
-        github: "https://github.com/yourusername/sentiment-analysis",
-        demo: "https://sentiment-dashboard.vercel.app",
-        stars: 32,
-        forks: 8,
-    },
-    {
-        id: 3,
-        title: "Smart Task Manager",
-        description: "A task management app with AI-powered prioritization and scheduling.",
-        image: "/images/project-3.jpg",
-        tags: ["React", "Firebase", "ML.js", "Material UI"],
-        github: "https://github.com/yourusername/smart-tasks",
-        demo: "https://smart-tasks.vercel.app",
-        stars: 28,
-        forks: 5,
-    },
-    {
-        id: 4,
-        title: "Personal Finance Tracker",
-        description: "A finance tracking application with ML-based expense categorization and insights.",
-        image: "/images/project-4.jpg",
-        tags: ["React", "Node.js", "MongoDB", "Chart.js"],
-        github: "https://github.com/yourusername/finance-tracker",
-        demo: "https://finance-tracker.vercel.app",
-        stars: 19,
-        forks: 3,
-    },
-    {
-        id: 5,
-        title: "Neural Network Visualizer",
-        description: "Interactive visualization tool for neural networks to help understand ML concepts.",
-        image: "/images/project-5.jpg",
-        tags: ["JavaScript", "Three.js", "TensorFlow.js"],
-        github: "https://github.com/yourusername/nn-visualizer",
-        demo: "https://nn-visualizer.vercel.app",
-        stars: 56,
-        forks: 14,
-    },
-    {
-        id: 6,
-        title: "Code Mentor AI",
-        description: "AI-powered code review and mentoring tool for developers.",
-        image: "/images/project-6.jpg",
-        tags: ["Python", "GPT-4", "React", "Express"],
-        github: "https://github.com/yourusername/code-mentor-ai",
-        demo: "https://code-mentor-ai.vercel.app",
-        stars: 38,
-        forks: 9,
-    },
-]
-
-// Filter categories
-const categories = ["All", "Machine Learning", "Web Development", "Data Science", "Mobile"]
+const categories = ["All", "Artificial Intelligence / Data Science", "Web Development", "Game Development", "Automation"]
 
 const ProjectCard = ({ project }) => {
+    const [showDetails, setShowDetails] = useState({})
+
+    const toggleDescription = (projectID) => {
+        setShowDetails((prev) => ({
+            ...prev,
+            [projectID]: !prev[projectID],
+        }))
+    }
+
+    const truncateText = (text) => {
+        if (text.length <= 90) return text;
+        return text.slice(0, 90) + '...';
+    };
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="group overflow-hidden rounded-xl bg-gray-900 shadow-xl transition-all hover:shadow-amber-400/20"
+            className="group flex flex-col overflow-hidden rounded-xl bg-gray-900 shadow-xl transition-all hover:shadow-amber-400/20"
         >
             <div className="relative h-48 overflow-hidden">
                 <img
@@ -112,22 +55,34 @@ const ProjectCard = ({ project }) => {
                 </div>
             </div>
 
-            <div className="p-6">
+            <div className="p-6 flex flex-col flex-grow">
                 <h3 className="mb-2 text-xl font-bold text-white">{project.title}</h3>
-                <p className="mb-4 text-gray-400">{project.description}</p>
 
-                <div className="mb-4 flex flex-wrap gap-2">
-                    {project.tags.map((tag, index) => (
-                        <span key={index} className="rounded-full bg-gray-800 px-3 py-1 text-xs text-gray-300">
-                            {tag}
+                <div className="flex-grow">
+                    <p className="mb-4 text-gray-400 cursor-pointer" onClick={() => toggleDescription(project.id)}>
+                        {showDetails[project.id]
+                            ? project.description
+                            : truncateText(project.description)}
+                        <span className="text-amber-400 ml-1 text-sm">
+                            {project.description.length > 90 && (
+                                showDetails[project.id] ? '(Show Less)' : '(Read More)'
+                            )}
                         </span>
-                    ))}
+                    </p>
+
+                    <div className="mb-4 flex flex-wrap gap-2">
+                        {project.tags.map((tag, index) => (
+                            <span key={index} className="rounded-full bg-gray-800 px-3 py-1 text-xs text-gray-300">
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
                 </div>
 
-                <div className="flex items-center justify-between text-sm text-gray-400">
+                <div className="mt-auto flex items-center justify-between text-sm text-gray-400">
                     <div className="flex items-center space-x-1">
-                        <Star size={14} className="text-amber-400" />
-                        <span>{project.stars}</span>
+                        <Heart size={14} className="text-amber-400" />
+                        <span>{project.likes}</span>
                     </div>
                     <div className="flex items-center space-x-1">
                         <GitFork size={14} />
@@ -142,8 +97,10 @@ const ProjectCard = ({ project }) => {
 const ProjectsSection = () => {
     const [activeCategory, setActiveCategory] = useState("All")
 
-    // Filter projects based on active category
-    const filteredProjects = projects
+    const filteredProjects =
+        activeCategory === "All"
+            ? dataProjects
+            : dataProjects.filter((project) => project.category.includes(activeCategory))
 
     return (
         <section id="projects" className="bg-black py-20">
@@ -169,7 +126,6 @@ const ProjectsSection = () => {
                     </motion.p>
                 </div>
 
-                {/* Filter buttons */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -189,14 +145,12 @@ const ProjectsSection = () => {
                     ))}
                 </motion.div>
 
-                {/* Projects grid */}
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {filteredProjects.map((project) => (
                         <ProjectCard key={project.id} project={project} />
                     ))}
                 </div>
 
-                {/* GitHub CTA */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -209,7 +163,7 @@ const ProjectsSection = () => {
                         Check out my GitHub profile for all my open-source projects and contributions
                     </p>
                     <a
-                        href="https://github.com/yourusername"
+                        href="https://github.com/PrabhjeeSingh"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center space-x-2 rounded-full bg-amber-400 px-6 py-3 font-medium text-black transition-all hover:bg-amber-300"
