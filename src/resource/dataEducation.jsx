@@ -5,7 +5,7 @@ import dps from '../assets/dpslogo.jpeg'
 
 const dataEducation = [
     {
-        title: "Bachelor of Science in Computer Science",
+        title: "Bachelor of Science Honours in Computer Science",
         company: "York University",
         date: "SEP 2020 - Dec 2024",
         details: [
