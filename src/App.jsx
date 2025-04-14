@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import icon from './assets/icon.png'
 
 
 function App() {
@@ -9,8 +9,7 @@ function App() {
   return (
     <>
       <header className="bg-gray-800 p-4 text-white text-center">
-        <img src={viteLogo} alt="Vite Logo" className="inline h-8" />
-        <img src={reactLogo} alt="React Logo" className="inline h-8" />
+        <img src={icon} alt="PS Logo" className="inline h-8" />
         <p className="inline p-4"> + Tailwind CSS</p>
       </header>
       <main className="p-4">
