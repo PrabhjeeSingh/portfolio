@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
   ],
-  base: '/myportfolio/', // Match this with your repository name
+  base: '/portfolio/', // repository name
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
